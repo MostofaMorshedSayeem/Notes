@@ -1,0 +1,773 @@
+================================================================================
+                        JAVA PROGRAMMING - CLASS 2
+                   DATA TYPES, VARIABLES AND LITERALS
+                        COMPLETE LECTURE NOTES
+================================================================================
+
+TABLE OF CONTENTS
+================================================================================
+
+1. Primitive Data Types Overview
+2. Wrapper Classes
+3. Variable Declaration and Initialization
+4. Variable, Classes, Object Naming Conventions
+5. Number Systems in Java
+6. Using Underscores in Numeric Literals
+7. How to Convert Number Systems
+8. Mantissa and Exponent (IEEE 754 Standard)
+9. ASCII Codes (0-127)
+10. Literals
+11. Type Casting in Java
+12. Constants in Java
+13. Important Notes for Beginners
+
+================================================================================
+                    PRIMITIVE DATA TYPES OVERVIEW
+================================================================================
+
+Data Type Reference Table
+-------------------------
+
+Type     | Size  | Range                                      | Default Value
+---------|-------|--------------------------------------------|--------------
+byte     | 1     | -128 to 127                               | 0
+short    | 2     | -32768 to 32767                           | 0
+int      | 4     | -2147483648 to 2147483647                 | 0
+long     | 8     | -9223372036854775808 to 9223372036854775807| 0L
+float    | 4     | 1.4e-45 to 3.4e38                         | 0.0f
+double   | 8     | 4.9e-324 to 1.8e308                       | 0.0d
+char     | 2     | 0 to 65535                                | \u0000
+boolean  | 1     | true or false                             | false
+
+================================================================================
+                           WRAPPER CLASSES
+================================================================================
+
+Object Representations of Primitive Data Types
+-----------------------------------------------
+
+Wrapper classes are object representations of primitive data types. Every 
+primitive type has a corresponding wrapper class:
+
+    Primitive Type    →    Wrapper Class
+    --------------         -------------
+    byte             →    Byte
+    short            →    Short
+    int              →    Integer
+    long             →    Long
+    float            →    Float
+    double           →    Double
+    char             →    Character
+    boolean          →    Boolean
+
+
+Key Features of Wrapper Classes
+-------------------------------
+
+    ✓ Wrapper classes are immutable
+    ✓ They provide utility methods for type conversion
+    ✓ Used in collections (ArrayList, HashMap) as they only accept objects
+    ✓ Support autoboxing and unboxing
+
+
+Finding Ranges of Primitive Data Types
+---------------------------------------
+
+Use wrapper class constants to find ranges:
+
+    • Integer.MIN_VALUE, Integer.MAX_VALUE
+    • Example: System.out.println("Int range: " + Integer.MIN_VALUE + " to " + Integer.MAX_VALUE);
+
+
+Autoboxing and Unboxing
+------------------------
+
+Autoboxing: Automatic conversion of primitive to wrapper object
+    int x = 10;
+    Integer y = x;        // autoboxing
+
+Unboxing: Automatic conversion of wrapper object to primitive
+    Integer a = new Integer(20);
+    int b = a;            // unboxing
+
+================================================================================
+                 VARIABLE DECLARATION AND INITIALIZATION
+================================================================================
+
+Variable Declaration
+--------------------
+
+Declaration: Creating a variable by specifying its data type and name
+Syntax: dataType variableName;
+
+Examples:
+    int age;
+    double salary;
+    String name;
+
+
+Variable Initialization
+-----------------------
+
+Initialization: Assigning a value to a declared variable
+    age = 25;
+    salary = 50000.0;
+    name = "John";
+
+
+Combined Declaration and Initialization
+---------------------------------------
+
+    int age = 25;
+    double salary = 50000.0;
+    String name = "John";
+
+
+Rules for Variable Declaration
+------------------------------
+
+    • Must start with letter, underscore (_), or dollar sign ($)
+    • Cannot start with a digit
+    • Cannot use Java keywords (int, class, public, etc.)
+    • Case-sensitive (age and Age are different)
+
+
+Variable Scope Types
+--------------------
+
+    • Local variables    : Declared inside methods, blocks
+    • Instance variables : Declared in class but outside methods
+    • Static variables   : Declared with static keyword
+
+================================================================================
+              VARIABLE, CLASSES, OBJECT NAMING CONVENTIONS
+================================================================================
+
+Variables and Methods
+---------------------
+
+    • Use camelCase
+    • Start with lowercase letter
+    • Examples: firstName, calculateTotalAmount, isValidUser
+
+
+Classes and Interfaces
+----------------------
+
+    • Use PascalCase (UpperCamelCase)
+    • Start with uppercase letter
+    • Examples: Student, BankAccount, DatabaseConnection
+
+
+Constants
+---------
+
+    • Use UPPER_CASE with underscores
+    • Declared as static final
+    • Examples: MAX_SIZE, PI, DEFAULT_TIMEOUT
+
+
+Packages
+--------
+
+    • Use lowercase letters
+    • Separate words with dots
+    • Examples: com.company.project, java.util
+
+
+Best Practices for Naming
+--------------------------
+
+    ✓ Use meaningful and descriptive names
+    ✓ Avoid abbreviations unless widely understood
+    ✓ Keep names concise but clear
+    ✓ Use verbs for methods (getName, setAge)
+    ✓ Use nouns for variables and classes
+
+================================================================================
+                        NUMBER SYSTEMS IN JAVA
+================================================================================
+
+Java supports four different number systems for representing integer values:
+
+Decimal (Base 10)
+-----------------
+    Digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+    
+    Examples:
+        byte b = 123;
+        int decimal = 255;
+
+
+Binary (Base 2)
+---------------
+    Digits: 0, 1
+    Prefix: 0B or 0b
+    
+    Examples:
+        byte binary = 0B1010;           // Represents 10 in decimal
+        int binaryNum = 0b11111111;     // Represents 255 in decimal
+
+
+Octal (Base 8)
+--------------
+    Digits: 0, 1, 2, 3, 4, 5, 6, 7
+    Prefix: 0
+    
+    Examples:
+        int octal = 0123;               // Represents 83 in decimal
+        int octalNum = 0377;            // Represents 255 in decimal
+
+
+Hexadecimal (Base 16)
+---------------------
+    Digits: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+    Prefix: 0X or 0x
+    
+    Examples:
+        int hex = 0x7B;                 // Represents 123 in decimal
+        int hexNum = 0xFF;              // Represents 255 in decimal
+
+
+Number System Conversions
+--------------------------
+
+    Decimal 10  = Binary 1010      = Octal 12  = Hexadecimal A
+    Decimal 15  = Binary 1111      = Octal 17  = Hexadecimal F
+    Decimal 255 = Binary 11111111  = Octal 377 = Hexadecimal FF
+
+
+Practical Usage
+---------------
+
+    • Decimal     : Most common, everyday calculations
+    • Binary      : Low-level programming, bit operations
+    • Octal       : File permissions in Unix/Linux systems
+    • Hexadecimal : Memory addresses, color codes, debugging
+
+================================================================================
+              USING UNDERSCORES (_) IN NUMERIC LITERALS
+================================================================================
+
+Java 7+ Feature for Improved Readability
+-----------------------------------------
+
+Java 7+ allows underscores in numeric literals to improve readability of 
+long numbers.
+
+
+When Underscores are ALLOWED
+----------------------------
+
+    ✓ Between digits in any numeric literal
+    ✓ In any number system (decimal, binary, octal, hexadecimal)
+    ✓ Multiple underscores between digits
+    ✓ In floating-point numbers
+
+
+Examples of VALID Usage
+-----------------------
+
+    int million = 1_000_000;                        // Decimal
+    long creditCard = 1234_5678_9012_3456L;         // Long number
+    int binary = 0b1010_0001_1000_0101;             // Binary
+    int octal = 0_123_456;                          // Octal
+    int hex = 0xFF_EC_DE_5E;                        // Hexadecimal
+    float pi = 3.14_15_92F;                         // Float
+    double bigDecimal = 123_456.789_012;            // Double
+
+
+When Underscores are NOT ALLOWED
+---------------------------------
+
+    ✗ At the beginning or end of a number
+    ✗ Next to decimal point in floating-point literals
+    ✗ Before or after 'L', 'F', 'D' suffixes
+    ✗ Before or after 'x' in hexadecimal numbers
+    ✗ Before or after 'b' in binary numbers
+
+
+Examples of INVALID Usage
+-------------------------
+
+    int wrong1 = _1000;              // Error: at beginning
+    int wrong2 = 1000_;              // Error: at end
+    float wrong3 = 3._14F;           // Error: before decimal point
+    float wrong4 = 3.14_F;           // Error: before suffix
+    int wrong5 = 0_x52;              // Error: before 'x'
+    int wrong6 = 0x_52;              // Error: after 'x'
+    int wrong7 = 0_b101;             // Error: before 'b'
+    long wrong8 = 123_L;             // Error: before suffix
+
+
+Benefits of Using Underscores
+------------------------------
+
+    ✓ Improves code readability
+    ✓ Makes large numbers easier to understand
+    ✓ Reduces counting errors
+    ✓ Groups digits logically (thousands, credit card format, etc.)
+
+================================================================================
+                    HOW TO CONVERT NUMBER SYSTEMS
+================================================================================
+
+Manual Conversion Methods
+-------------------------
+
+1. DECIMAL TO BINARY
+   ------------------
+   Method: Divide by 2 repeatedly, read remainders bottom-up
+   
+   Example: Convert 13 to binary
+       13 ÷ 2 = 6 remainder 1
+       6 ÷ 2 = 3 remainder 0
+       3 ÷ 2 = 1 remainder 1
+       1 ÷ 2 = 0 remainder 1
+       Result: 1101
+
+2. DECIMAL TO OCTAL
+   ----------------
+   Method: Divide by 8 repeatedly, read remainders bottom-up
+   
+   Example: Convert 83 to octal
+       83 ÷ 8 = 10 remainder 3
+       10 ÷ 8 = 1 remainder 2
+       1 ÷ 8 = 0 remainder 1
+       Result: 123
+
+3. DECIMAL TO HEXADECIMAL
+   ----------------------
+   Method: Divide by 16 repeatedly, read remainders bottom-up
+   
+   Example: Convert 255 to hexadecimal
+       255 ÷ 16 = 15 remainder 15 (F)
+       15 ÷ 16 = 0 remainder 15 (F)
+       Result: FF
+
+4. BINARY TO DECIMAL
+   -----------------
+   Method: Multiply each digit by powers of 2
+   
+   Example: Convert 1101 to decimal
+       1×2³ + 1×2² + 0×2¹ + 1×2⁰ = 8 + 4 + 0 + 1 = 13
+
+5. OCTAL TO DECIMAL
+   ----------------
+   Method: Multiply each digit by powers of 8
+   
+   Example: Convert 123 to decimal
+       1×8² + 2×8¹ + 3×8⁰ = 64 + 16 + 3 = 83
+
+6. HEXADECIMAL TO DECIMAL
+   ----------------------
+   Method: Multiply each digit by powers of 16
+   
+   Example: Convert FF to decimal
+       F×16¹ + F×16⁰ = 15×16 + 15×1 = 240 + 15 = 255
+
+
+Java Built-in Conversion Methods
+--------------------------------
+
+Converting FROM Decimal:
+    Integer.toBinaryString(10);     // Returns "1010"
+    Integer.toOctalString(10);      // Returns "12"
+    Integer.toHexString(10);        // Returns "a"
+
+Converting TO Decimal:
+    Integer.parseInt("1010", 2);    // Binary to decimal = 10
+    Integer.parseInt("12", 8);      // Octal to decimal = 10
+    Integer.parseInt("a", 16);      // Hex to decimal = 10
+
+Converting Between Non-Decimal Systems:
+    // Binary to Hex: First convert to decimal, then to hex
+    String binary = "1010";
+    int decimal = Integer.parseInt(binary, 2);
+    String hex = Integer.toHexString(decimal);
+
+
+Quick Reference Table
+---------------------
+
+    Decimal | Binary | Octal | Hexadecimal
+    --------|--------|-------|------------
+    0       | 0      | 0     | 0
+    1       | 1      | 1     | 1
+    2       | 10     | 2     | 2
+    3       | 11     | 3     | 3
+    4       | 100    | 4     | 4
+    5       | 101    | 5     | 5
+    6       | 110    | 6     | 6
+    7       | 111    | 7     | 7
+    8       | 1000   | 10    | 8
+    9       | 1001   | 11    | 9
+    10      | 1010   | 12    | A
+    11      | 1011   | 13    | B
+    12      | 1100   | 14    | C
+    13      | 1101   | 15    | D
+    14      | 1110   | 16    | E
+    15      | 1111   | 17    | F
+    16      | 10000  | 20    | 10
+
+================================================================================
+              MANTISSA AND EXPONENT (IEEE 754 STANDARD)
+================================================================================
+
+IEEE 754 International Standard
+-------------------------------
+
+IEEE 754 is the international standard for floating-point arithmetic used 
+in Java.
+
+
+Float (32-bit) Structure
+------------------------
+
+    • Sign bit     : 1 bit (0 = positive, 1 = negative)
+    • Exponent     : 8 bits (bias = 127)
+    • Mantissa     : 23 bits (Significand)
+
+
+Double (64-bit) Structure
+-------------------------
+
+    • Sign bit     : 1 bit (0 = positive, 1 = negative)
+    • Exponent     : 11 bits (bias = 1023)
+    • Mantissa     : 52 bits (Significand)
+
+
+Precision Guidelines
+--------------------
+
+    • Float        : Up to 6-7 decimal digits are reliable
+    • Double       : Up to 14-15 decimal digits are reliable
+    • Beyond these limits, precision may be lost
+
+
+Examples of Precision Loss
+--------------------------
+
+    float f = 1.23456789f;          // May store as 1.2345679 (7 digits)
+    double d = 1.234567890123456789; // May store as 1.2345678901234567 (15 digits)
+
+
+Why Use Double Over Float
+--------------------------
+
+    ✓ Double precision for scientific calculations
+    ✓ Less rounding errors in complex calculations
+    ✓ Default choice for decimal numbers in Java
+
+
+Special Float/Double Values
+---------------------------
+
+    • Positive infinity : Float.POSITIVE_INFINITY, Double.POSITIVE_INFINITY
+    • Negative infinity : Float.NEGATIVE_INFINITY, Double.NEGATIVE_INFINITY
+    • Not a Number      : Float.NaN, Double.NaN
+
+
+Examples of Special Values
+--------------------------
+
+    float result1 = 1.0f / 0.0f;     // Positive infinity
+    double result2 = -1.0 / 0.0;     // Negative infinity
+    double result3 = 0.0 / 0.0;      // NaN (Not a Number)
+
+
+Scientific Notation in Java
+----------------------------
+
+    float scientific = 1.23e4f;      // 1.23 × 10⁴ = 12300.0
+    double bigNumber = 6.022e23;     // Avogadro's number
+    double smallNumber = 1.6e-19;    // Electronic charge
+
+================================================================================
+                        ASCII CODES (0-127)
+================================================================================
+
+ASCII Standard Overview
+-----------------------
+
+ASCII (American Standard Code for Information Interchange) represents 
+characters using 7 bits (0-127).
+
+
+Common ASCII Values
+-------------------
+
+    • Digits '0'-'9'       : 48-57
+    • Uppercase 'A'-'Z'    : 65-90
+    • Lowercase 'a'-'z'    : 97-122
+    • Space                : 32
+    • Newline              : 10
+    • Tab                  : 9
+
+
+Important ASCII Character Ranges
+--------------------------------
+
+    0-31    : Control characters (non-printable)
+    32      : Space
+    33-47   : Special symbols (!, ", #, $, %, &, ', (, ), *, +, ,, -, ., /)
+    48-57   : Digits (0-9)
+    58-64   : More symbols (:, ;, <, =, >, ?, @)
+    65-90   : Uppercase letters (A-Z)
+    91-96   : Symbols ([, \, ], ^, _, `)
+    97-122  : Lowercase letters (a-z)
+    123-127 : More symbols ({, |, }, ~, DEL)
+
+
+Converting Characters to ASCII in Java
+---------------------------------------
+
+    char c = 'A';
+    int ascii = (int) c;              // Returns 65
+    char backToChar = (char) ascii;   // Returns 'A'
+
+
+Useful ASCII Conversions
+------------------------
+
+    • 'A' to 'a'         : add 32 (65 + 32 = 97)
+    • 'a' to 'A'         : subtract 32 (97 - 32 = 65)
+    • '0' to actual number: subtract 48 ('5' - '0' = 5)
+
+
+Practical Examples
+------------------
+
+    char digit = '5';
+    int number = digit - '0';            // Converts '5' to integer 5
+
+    char upper = 'A';
+    char lower = (char)(upper + 32);     // Converts 'A' to 'a'
+
+================================================================================
+                              LITERALS
+================================================================================
+
+Definition
+----------
+
+Literals are fixed values that appear directly in the source code.
+
+
+Integer Literals
+----------------
+
+    • Decimal      : 123, 456
+    • Binary       : 0b1010 (prefix 0b)
+    • Octal        : 0123 (prefix 0)
+    • Hexadecimal  : 0x7B (prefix 0x)
+    • Long         : 123L or 123l
+
+
+Floating-point Literals
+-----------------------
+
+    • Double       : 3.14, 2.5e10 (default for decimal numbers)
+    • Float        : 3.14f, 2.5F (suffix f or F)
+
+
+Character Literals
+------------------
+
+    • Single character : 'A', 'z', '5'
+    • Escape sequences : '\n' (newline), '\t' (tab), '\\' (backslash)
+    • Unicode          : '\u0041' (represents 'A')
+
+
+String Literals
+---------------
+
+    • Enclosed in double quotes : "Hello World"
+    • Can contain escape sequences : "Line 1\nLine 2"
+
+
+Boolean Literals
+----------------
+
+    • Only two values : true, false
+
+
+Complete Examples
+-----------------
+
+    int decimal = 100;
+    int binary = 0b1100100;          // Same as 100
+    int hex = 0x64;                  // Same as 100
+    long bigNumber = 123456789L;
+    float pi = 3.14159f;
+    double e = 2.71828;
+    char grade = 'A';
+    String message = "Hello Java!";
+    boolean isActive = true;
+
+================================================================================
+                        TYPE CASTING IN JAVA
+================================================================================
+
+Definition
+----------
+
+Type casting is the process of converting one data type to another.
+
+
+Implicit Casting (Widening/Automatic)
+-------------------------------------
+
+    • Smaller data type to larger data type
+    • No data loss occurs
+    • Done automatically by compiler
+
+Order of implicit casting:
+    byte → short → int → long → float → double
+    char → int
+
+Examples:
+    int x = 10;
+    long y = x;              // int to long (automatic)
+    float z = y;             // long to float (automatic)
+
+
+Explicit Casting (Narrowing/Manual)
+-----------------------------------
+
+    • Larger data type to smaller data type
+    • May cause data loss
+    • Must be done manually using cast operator
+
+Examples:
+    double a = 9.78;
+    int b = (int)a;          // b = 9 (decimal part lost)
+    long c = 1234567890L;
+    int d = (int)c;          // May lose data if value is too large
+
+================================================================================
+                         CONSTANTS IN JAVA
+================================================================================
+
+Definition
+----------
+
+Constants are variables whose values cannot be changed once initialized.
+
+
+Using 'final' Keyword
+---------------------
+
+    final int MAX_STUDENTS = 50;
+    final double PI = 3.14159;
+
+
+Characteristics of Constants
+----------------------------
+
+    • Must be initialized when declared or in constructor
+    • Convention: Use UPPER_CASE with underscores
+    • Can be declared at class level (static final) or instance level
+
+
+Class Constants (static final)
+------------------------------
+
+    static final String COMPANY_NAME = "TechCorp";
+    static final int MAX_RETRY_ATTEMPTS = 3;
+
+================================================================================
+                      IMPORTANT NOTES FOR BEGINNERS
+================================================================================
+
+Memory Allocation
+-----------------
+
+    • Primitive types : Stored in stack memory
+    • Objects         : Stored in heap memory
+    • Variables store references to objects in heap
+
+
+Default Values
+--------------
+
+    • Numeric types      : 0
+    • boolean           : false
+    • char              : '\u0000'
+    • Object references : null
+
+
+Good Programming Practices
+---------------------------
+
+    ✓ Always initialize variables before use
+    ✓ Use meaningful variable names
+    ✓ Follow naming conventions consistently
+    ✓ Use constants for fixed values
+    ✓ Comment your code appropriately
+    ✓ Handle type casting carefully to avoid data loss
+
+
+Common Mistakes to Avoid
+------------------------
+
+    ✗ Using uninitialized variables
+    ✗ Confusing = (assignment) with == (comparison)
+    ✗ Integer division truncation: 5/2 = 2 (not 2.5)
+    ✗ Not handling potential data loss in explicit casting
+    ✗ Using float for precise calculations (use BigDecimal instead)
+
+================================================================================
+                               END OF NOTES
+================================================================================ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
