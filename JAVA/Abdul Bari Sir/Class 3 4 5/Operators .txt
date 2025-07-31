@@ -7,6 +7,12 @@ Assignment Operators: =, +=, -=, *=, /=, %=
 Increment/Decrement: ++, --
 Bitwise Operators: &, |, ^, ~, <<, >>, >>>
 
+with examples for all operators
+with all data types
+
+what's cohersion with example 
+
+
 Operator Precedence (High to Low):
 1. Postfix: (), [], .
 2. Unary: ++, --, +, -, !, ~
