@@ -1,0 +1,5 @@
+difference between intrepeter amd compiler
+
+-
+-
+-

@@ -1,0 +1,84 @@
+# OPERATORS AND PRECEDENCE
+
+Arithmetic Operators: +, -, *, /, %
+Relational Operators: ==, !=, <, >, <=, >=
+Logical Operators: &&, ||, !
+Assignment Operators: =, +=, -=, *=, /=, %=
+Increment/Decrement: ++, --
+Bitwise Operators: &, |, ^, ~, <<, >>, >>>
+
+Operator Precedence (High to Low):
+1. Postfix: (), [], .
+2. Unary: ++, --, +, -, !, ~
+3. Multiplicative: *, /, %
+4. Additive: +, -
+5. Shift: <<, >>, >>>
+6. Relational: <, >, <=, >=
+7. Equality: ==, !=
+8. Logical AND: &&
+9. Logical OR: ||
+10. Assignment: =, +=, -=, etc.
+
+# ESCAPE SEQUENCES
+
+Common escape sequences in Java:
+\n - Newline
+\t - Tab
+\r - Carriage return
+\\ - Backslash
+\" - Double quote
+\' - Single quote
+\b - Backspace
+\f - Form feed
+\0 - Null character
+
+Unicode escape sequences:
+\uXXXX - Unicode character (XXXX is hex code)
+Example: \u0041 represents 'A'
+
+
+
+Common Mistakes to Avoid:
+
+- Confusing = (assignment) with == (comparison)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
