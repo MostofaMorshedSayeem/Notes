@@ -1,52 +1,516 @@
 # OPERATORS AND PRECEDENCE
 
-Arithmetic Operators: +, -, *, /, %
-Relational Operators: ==, !=, <, >, <=, >=
-Logical Operators: &&, ||, !
-Assignment Operators: =, +=, -=, *=, /=, %=
-Increment/Decrement: ++, --
-Bitwise Operators: &, |, ^, ~, <<, >>, >>>
+# OPERATORS AND PRECEDENCE
 
-with examples for all operators
-with all data types
+## ARITHMETIC OPERATORS: +, -, *, /, %
 
-what's cohersion with example 
+**Addition (+):**
+```java
+int a = 10, b = 5;
+int sum = a + b;        // Result: 15
+double x = 3.5, y = 2.1;
+double result = x + y;  // Result: 5.6
+String str = "Hello" + " World";  // Result: "Hello World"
+```
+
+**Subtraction (-):**
+```java
+int difference = 10 - 3;    // Result: 7
+double result = 8.5 - 2.2;  // Result: 6.3
+```
+
+**Multiplication (*):**
+```java
+int product = 6 * 4;        // Result: 24
+double result = 3.5 * 2;    // Result: 7.0
+```
+
+**Division (/):**
+```java
+int intDiv = 10 / 3;        // Result: 3 (integer division)
+double realDiv = 10.0 / 3;  // Result: 3.333...
+double result = 15.6 / 4;   // Result: 3.9
+```
+
+**Modulus (%):**
+```java
+int remainder = 10 % 3;     // Result: 1
+int even = 8 % 2;          // Result: 0
+double mod = 10.5 % 3.2;   // Result: 0.9
+```
+
+## RELATIONAL OPERATORS: ==, !=, <, >, <=, >=
+
+**Equal to (==):**
+```java
+int a = 5, b = 5;
+boolean isEqual = (a == b);     // Result: true
+String str1 = "Hello";
+String str2 = "Hello";
+boolean strEqual = str1.equals(str2);  // Use .equals() for strings
+```
+
+**Not equal to (!=):**
+```java
+int x = 10, y = 15;
+boolean notEqual = (x != y);    // Result: true
+char c1 = 'A', c2 = 'B';
+boolean charNotEqual = (c1 != c2);  // Result: true
+```
+
+**Less than (<), Greater than (>):**
+```java
+int score1 = 85, score2 = 92;
+boolean isLess = (score1 < score2);    // Result: true
+boolean isGreater = (score1 > score2); // Result: false
+double price1 = 19.99, price2 = 15.50;
+boolean priceCheck = (price1 > price2); // Result: true
+```
+
+**Less than or equal (<=), Greater than or equal (>=):**
+```java
+int age = 18;
+boolean canVote = (age >= 18);     // Result: true
+float grade = 75.5f;
+boolean passing = (grade >= 60.0f); // Result: true
+```
+
+## LOGICAL OPERATORS: &&, ||, !
+
+**Logical AND (&&):**
+```java
+int age = 25;
+boolean hasLicense = true;
+boolean canDrive = (age >= 18) && hasLicense;  // Result: true
+
+int score = 85;
+boolean excellent = (score >= 90) && (score <= 100);  // Result: false
+```
+
+**Logical OR (||):**
+```java
+boolean isWeekend = true;
+boolean isHoliday = false;
+boolean noWork = isWeekend || isHoliday;  // Result: true
+
+char grade = 'B';
+boolean goodGrade = (grade == 'A') || (grade == 'B');  // Result: true
+```
+
+**Logical NOT (!):**
+```java
+boolean isRaining = false;
+boolean goOutside = !isRaining;    // Result: true
+boolean isEmpty = true;
+boolean hasContent = !isEmpty;     // Result: false
+```
+
+## ASSIGNMENT OPERATORS: =, +=, -=, *=, /=, %=
+
+**Basic Assignment (=):**
+```java
+int number = 42;
+double pi = 3.14159;
+char letter = 'A';
+boolean flag = true;
+```
+
+**Compound Assignment:**
+```java
+int x = 10;
+x += 5;     // x = x + 5, Result: x = 15
+x -= 3;     // x = x - 3, Result: x = 12
+x *= 2;     // x = x * 2, Result: x = 24
+x /= 4;     // x = x / 4, Result: x = 6
+x %= 4;     // x = x % 4, Result: x = 2
+
+String message = "Hello";
+message += " World";  // Result: "Hello World"
+```
+
+## INCREMENT/DECREMENT: ++, --
+
+**Pre-increment/Pre-decrement:**
+```java
+int i = 5;
+int preInc = ++i;   // i becomes 6, preInc = 6
+int j = 10;
+int preDec = --j;   // j becomes 9, preDec = 9
+```
+
+**Post-increment/Post-decrement:**
+```java
+int x = 5;
+int postInc = x++;  // postInc = 5, then x becomes 6
+int y = 10;
+int postDec = y--;  // postDec = 10, then y becomes 9
+
+// Common usage in loops
+for(int k = 0; k < 5; k++) {  // k++ increments after each iteration
+    System.out.println(k);    // Prints: 0, 1, 2, 3, 4
+}
+```
+
+## BITWISE OPERATORS: &, |, ^, ~, <<, >>, >>>
+
+**Bitwise AND (&):**
+```java
+int a = 12;  // Binary: 1100
+int b = 10;  // Binary: 1010
+int result = a & b;  // Binary: 1000, Result: 8
+```
+
+**Bitwise OR (|):**
+```java
+int x = 12;  // Binary: 1100
+int y = 10;  // Binary: 1010
+int result = x | y;  // Binary: 1110, Result: 14
+```
+
+**Bitwise XOR (^):**
+```java
+int p = 12;  // Binary: 1100
+int q = 10;  // Binary: 1010
+int result = p ^ q;  // Binary: 0110, Result: 6
+```
+
+**Bitwise NOT (~):**
+```java
+int num = 5;     // Binary: 00000101
+int result = ~num;  // Binary: 11111010, Result: -6 (two's complement)
+```
+
+**Left Shift (<<):**
+```java
+int value = 5;   // Binary: 101
+int shifted = value << 2;  // Binary: 10100, Result: 20 (5 * 2^2)
+```
+
+**Right Shift (>>):**
+```java
+int value = 20;  // Binary: 10100
+int shifted = value >> 2;  // Binary: 101, Result: 5 (20 / 2^2)
+```
+
+**Unsigned Right Shift (>>>):**
+```java
+int negValue = -8;  // Binary: 11111000 (in 32-bit)
+int shifted = negValue >>> 2;  // Fills with 0s from left
+```
+
+## TYPE COERCION (AUTOMATIC TYPE CONVERSION)
+
+**Implicit Coercion (Widening):**
+```java
+// Automatic conversion from smaller to larger data types
+byte byteVal = 10;
+int intVal = byteVal;      // byte → int (automatic)
+long longVal = intVal;     // int → long (automatic)
+float floatVal = longVal;  // long → float (automatic)
+double doubleVal = floatVal; // float → double (automatic)
+
+// In expressions
+int i = 10;
+double d = 3.5;
+double result = i + d;     // i is promoted to double, result = 13.5
+```
+
+**Explicit Coercion (Narrowing - Casting Required):**
+```java
+// Manual conversion from larger to smaller data types
+double doubleNum = 9.8;
+int intNum = (int) doubleNum;  // Result: 9 (decimal part lost)
+
+long longValue = 100L;
+int intValue = (int) longValue;  // Explicit cast required
+
+// Character and integer conversion
+char ch = 'A';
+int ascii = ch;           // Automatic: char → int, Result: 65
+int num = 66;
+char character = (char) num;  // Explicit cast, Result: 'B'
+```
+
+**String Conversion:**
+```java
+int number = 42;
+String str = String.valueOf(number);  // "42"
+String numStr = number + "";          // "42" (concatenation)
+
+String stringNum = "123";
+int converted = Integer.parseInt(stringNum);  // 123
+double convertedDouble = Double.parseDouble("45.67");  // 45.67
+``` 
 
 
-Operator Precedence (High to Low):
-1. Postfix: (), [], .
-2. Unary: ++, --, +, -, !, ~
-3. Multiplicative: *, /, %
-4. Additive: +, -
-5. Shift: <<, >>, >>>
-6. Relational: <, >, <=, >=
-7. Equality: ==, !=
-8. Logical AND: &&
-9. Logical OR: ||
-10. Assignment: =, +=, -=, etc.
+## OPERATOR PRECEDENCE (High to Low):
+
+**1. Postfix: (), [], .**
+```java
+int[] arr = {1, 2, 3};
+int result = arr[0] + 5;  // [] has higher precedence than +
+String str = "Hello".length();  // . has higher precedence
+```
+
+**2. Unary: ++, --, +, -, !, ~**
+```java
+int x = 5;
+int result1 = -x++;     // Unary - applied to x, then x incremented
+int result2 = !true;    // Logical NOT
+int result3 = ~10;      // Bitwise NOT
+```
+
+**3. Multiplicative: *, /, %**
+```java
+int result = 2 + 3 * 4;    // Result: 14 (not 20, * has higher precedence)
+int mod = 10 + 15 % 4;     // Result: 13 (15 % 4 = 3, then 10 + 3)
+```
+
+**4. Additive: +, -**
+```java
+int result = 5 * 2 + 3;    // Result: 13 (* before +)
+int sub = 10 - 2 + 3;      // Result: 11 (left to right for same precedence)
+```
+
+**5. Shift: <<, >>, >>>**
+```java
+int result = 8 + 4 << 1;   // Result: 24 (8 + 4 = 12, then 12 << 1 = 24)
+```
+
+**6. Relational: <, >, <=, >=**
+```java
+boolean result = 5 + 3 > 2 * 4;  // Result: false (8 > 8 is false)
+```
+
+**7. Equality: ==, !=**
+```java
+boolean result = 10 > 5 == true;  // Result: true (10 > 5 is true, true == true)
+```
+
+**8. Bitwise AND: &**
+```java
+int result = 12 | 8 & 4;   // Result: 12 (8 & 4 = 0, then 12 | 0 = 12)
+```
+
+**9. Bitwise XOR: ^**
+```java
+int result = 8 & 4 ^ 2;    // & has higher precedence than ^
+```
+
+**10. Bitwise OR: |**
+```java
+int result = 8 ^ 4 | 2;    // ^ has higher precedence than |
+```
+
+**11. Logical AND: &&**
+```java
+boolean result = true || false && false;  // Result: true (&& before ||)
+```
+
+**12. Logical OR: ||**
+```java
+boolean result = false && true || true;   // Result: true
+```
+
+**13. Conditional (Ternary): ? :**
+```java
+int max = (a > b) ? a : b;  // Condition evaluated first
+```
+
+**14. Assignment: =, +=, -=, *=, /=, %=, etc.**
+```java
+int x = 5;
+x += 2 * 3;     // Result: x = 11 (2 * 3 = 6, then x = 5 + 6)
+```
+
+**Precedence Examples with Parentheses:**
+```java
+// Without parentheses (following precedence)
+int result1 = 2 + 3 * 4;        // Result: 14
+int result2 = 10 - 8 / 2;       // Result: 6
+boolean bool1 = true || false && false;  // Result: true
+
+// With parentheses (overriding precedence)
+int result3 = (2 + 3) * 4;      // Result: 20
+int result4 = (10 - 8) / 2;     // Result: 1
+boolean bool2 = (true || false) && false;  // Result: false
+```
 
 # ESCAPE SEQUENCES
 
-Common escape sequences in Java:
-\n - Newline
-\t - Tab
-\r - Carriage return
-\\ - Backslash
-\" - Double quote
-\' - Single quote
-\b - Backspace
-\f - Form feed
-\0 - Null character
+## COMMON ESCAPE SEQUENCES IN JAVA:
 
-Unicode escape sequences:
-\uXXXX - Unicode character (XXXX is hex code)
-Example: \u0041 represents 'A'
+**\\n - Newline**
+```java
+System.out.println("Hello\\nWorld");
+// Output:
+// Hello
+// World
+```
 
+**\\t - Tab**
+```java
+System.out.println("Name:\\tJohn");
+System.out.println("Age:\\t25");
+// Output:
+// Name:    John
+// Age:     25
+```
 
+**\\r - Carriage Return**
+```java
+System.out.println("Hello\\rWorld");  // Moves cursor to beginning of line
+// Output: World (overwrites "Hello")
+```
 
-Common Mistakes to Avoid:
+**\\\\ - Backslash**
+```java
+System.out.println("File path: C:\\\\Users\\\\Documents");
+// Output: File path: C:\\Users\\Documents
+```
 
-- Confusing = (assignment) with == (comparison)
+**\\" - Double Quote**
+```java
+System.out.println("He said, \\"Hello World\\"");
+// Output: He said, "Hello World"
+```
+
+**\\' - Single Quote**
+```java
+System.out.println("It\\'s a beautiful day");
+// Output: It's a beautiful day
+char quote = '\\'';  // Single quote character
+```
+
+**\\b - Backspace**
+```java
+System.out.println("Hello\\bWorld");
+// Output: HellWorld (backspace removes 'o')
+```
+
+**\\f - Form Feed**
+```java
+System.out.println("Page 1\\fPage 2");  // Rarely used in modern systems
+```
+
+**\\0 - Null Character**
+```java
+char nullChar = '\\0';  // ASCII value 0
+```
+
+## UNICODE ESCAPE SEQUENCES:
+
+**\\uXXXX - Unicode Character (XXXX is hex code)**
+```java
+// Common Unicode examples
+char letterA = '\\u0041';        // 'A' (ASCII 65)
+char letterZ = '\\u005A';        // 'Z' (ASCII 90)
+char heart = '\\u2764';          // ❤ (heart symbol)
+char smiley = '\\u263A';         // ☺ (smiley face)
+char euro = '\\u20AC';           // € (euro symbol)
+
+// Using in strings
+String greeting = "Hello \\u4e16\\u754c";  // "Hello 世界" (Hello World in Chinese)
+System.out.println("Copyright \\u00A9 2024");  // Copyright © 2024
+
+// Mathematical symbols
+System.out.println("Pi symbol: \\u03C0");     // π
+System.out.println("Infinity: \\u221E");      // ∞
+System.out.println("Degree: 45\\u00B0");      // 45°
+```
+
+## PRACTICAL EXAMPLES:
+
+**File Paths and Special Characters:**
+```java
+String windowsPath = "C:\\\\Program Files\\\\Java\\\\bin";
+String quotedText = "The book title is \\"Java Programming\\"";
+String htmlTag = "<p>This is a paragraph with a \\"class\\" attribute</p>";
+```
+
+**Formatting Output:**
+```java
+System.out.println("Product\\tPrice\\tQuantity");
+System.out.println("Apple\\t$2.50\\t10");
+System.out.println("Banana\\t$1.20\\t25");
+// Output:
+// Product    Price    Quantity
+// Apple      $2.50    10
+// Banana     $1.20    25
+```
+
+**JSON String with Escape Sequences:**
+```java
+String json = "{\\"name\\": \\"John\\", \\"age\\": 30, \\"city\\": \\"New York\\"}";
+System.out.println(json);
+// Output: {"name": "John", "age": 30, "city": "New York"}
+```
+
+## COMMON MISTAKES TO AVOID:
+
+**Confusing = (assignment) with == (comparison):**
+```java
+// WRONG - Assignment instead of comparison
+int x = 5;
+if (x = 10) {  // This assigns 10 to x, not comparing!
+    // Compilation error in Java (unlike C/C++)
+}
+
+// CORRECT - Comparison
+if (x == 10) {  // This compares x with 10
+    System.out.println("x is 10");
+}
+```
+
+**Integer Division vs. Floating Point Division:**
+```java
+// WRONG - Integer division
+int result1 = 7 / 2;        // Result: 3 (not 3.5)
+
+// CORRECT - Floating point division
+double result2 = 7.0 / 2;   // Result: 3.5
+double result3 = (double) 7 / 2;  // Result: 3.5 (casting)
+```
+
+**Increment/Decrement Operator Confusion:**
+```java
+int i = 5;
+int a = i++;  // a = 5, i = 6 (post-increment)
+int b = ++i;  // i = 7, b = 7 (pre-increment)
+
+// Be careful in expressions
+int x = 10;
+int result = x++ + ++x;  // Can be confusing: result = 10 + 12 = 22, x = 12
+```
+
+**String Comparison Mistakes:**
+```java
+// WRONG - Using == for string comparison
+String str1 = new String("Hello");
+String str2 = new String("Hello");
+if (str1 == str2) {  // This compares references, not content!
+    // This will be false
+}
+
+// CORRECT - Using .equals() for string comparison
+if (str1.equals(str2)) {  // This compares content
+    System.out.println("Strings are equal");
+}
+```
+
+**Logical Operator Short-Circuit:**
+```java
+// Be aware of short-circuit evaluation
+int x = 0;
+if (x != 0 && 10/x > 2) {  // Safe: if x is 0, second part not evaluated
+    System.out.println("Safe from division by zero");
+}
+
+// Dangerous without short-circuit
+if (x != 0 & 10/x > 2) {  // Bitwise &: both parts evaluated, causes error!
+    System.out.println("This will cause ArithmeticException");
+}
+```
 
 
 
