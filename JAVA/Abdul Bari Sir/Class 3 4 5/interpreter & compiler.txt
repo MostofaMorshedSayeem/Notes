@@ -1,5 +1,43 @@
+
 difference between intrepeter amd compiler
 
 -
 -
--
+- interpreters don't generate seperate files comilers do
+
+examples
+
+
+
+ platform dependency and platform indepency
+
+system call of machine code
+
+architecture of jvm and memory allocation 
+(program/stack/heap) with code example 
+class loader
+interpreter/jit compiler
+garbage collectors 
+native mathod 
+native method interface 
+
+
+
+class loader sub system 
+loading 
+
+bootstrap class loader
+extension class posder
+application class loader
+
+linking 
+
+verify 
+prepare 
+resolvr
+
+
+initilatizion 
+
+
+
